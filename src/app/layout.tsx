@@ -3,7 +3,8 @@ import { Karla } from 'next/font/google'
 import './globals.css'
 import React from 'react'
 import Providers from '@/providers/Providers'
-import ToggleThemeButton from '@/components/ToggleThemeButton'
+import ToggleThemeButton from '@/components/toggle-theme-button/ToggleThemeButton'
+import NekoPet from '@/components/neko-pet/NekoPet'
 
 const karla = Karla({
     subsets: ['latin'],
@@ -21,12 +22,13 @@ export default function RootLayout({
 }>) {
     return (
         <html lang='en' suppressHydrationWarning>
-            {/* <Providers> */}
             <body className={`${karla.className} antialiased`}>
-                <ToggleThemeButton />
-                {children}
+                <Providers>
+                    <NekoPet />
+                    <ToggleThemeButton />
+                    {children}
+                </Providers>
             </body>
-            {/* </Providers> */}
         </html>
     )
 }
