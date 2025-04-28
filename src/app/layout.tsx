@@ -22,12 +22,14 @@ export default function RootLayout({
 }>) {
     return (
         <html lang='en' suppressHydrationWarning>
-            <body className={`${karla.className} antialiased`}>
-                <Providers>
-                    <NekoPet />
-                    <ToggleThemeButton />
-                    {children}
-                </Providers>
+            <body className={`${karla.className} `}>
+                <div className='bg-white antialiased dark:bg-black'>
+                    <Providers>
+                        <NekoPet />
+                        <ToggleThemeButton />
+                        {children}
+                    </Providers>
+                </div>
             </body>
         </html>
     )
