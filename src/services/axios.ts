@@ -1,4 +1,5 @@
 import axios from 'axios'
+import { cache } from 'react'
 
 export const api = async (path: string) => {
     try {

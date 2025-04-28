@@ -4,7 +4,6 @@ import './globals.css'
 import React from 'react'
 import Providers from '@/providers/Providers'
 import ToggleThemeButton from '@/components/ToggleThemeButton'
-import InitColorSchemeScript from '@mui/material/InitColorSchemeScript'
 
 const karla = Karla({
     subsets: ['latin'],
@@ -22,13 +21,12 @@ export default function RootLayout({
 }>) {
     return (
         <html lang='en' suppressHydrationWarning>
-            <Providers>
-                <body className={`${karla.className} antialiased`}>
-                    <InitColorSchemeScript attribute='class' />
-                    <ToggleThemeButton />
-                    {children}
-                </body>
-            </Providers>
+            {/* <Providers> */}
+            <body className={`${karla.className} antialiased`}>
+                <ToggleThemeButton />
+                {children}
+            </body>
+            {/* </Providers> */}
         </html>
     )
 }

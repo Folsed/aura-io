@@ -1,9 +1,9 @@
-import { Button } from '@mui/material'
+import WaifuGrid from '@/app/components/waifu-grid/WaifuGrid'
 
 export default function Home() {
     return (
         <div>
-            <Button variant='contained'>Hello World</Button>
+            {/* <WaifuGrid /> */}
         </div>
     )
 }
