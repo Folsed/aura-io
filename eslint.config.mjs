@@ -7,6 +7,9 @@ const compat = new FlatCompat({
 const eslintConfig = [
     ...compat.config({
         extends: ['eslint:recommended', 'next'],
+        rules: {
+            'no-unused-vars': false,
+        },
     }),
 ]
 export default eslintConfig
