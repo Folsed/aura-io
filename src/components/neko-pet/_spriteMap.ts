@@ -4,7 +4,6 @@
 //
 // Description: N - North, NE - North East, E - East, SE - South East, S - South, SW - South West, W - West, NW - North West
 
-
 export const spriteMap = {
     idle: [[-3, -3]],
     alert: [[-7, -3]],

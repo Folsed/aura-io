@@ -14,25 +14,29 @@ const NekoPet = () => {
     const frameCount = useRef(0)
 
     useEffect(() => {
-        const onMouseMove = (e: MouseEvent) => {    // Update mouse position
+        const onMouseMove = (e: MouseEvent) => {
+            // Update mouse position
             mousePos.current.x = e.clientX
             mousePos.current.y = e.clientY
         }
 
-        document.addEventListener('mousemove', onMouseMove)     // Add mouse move event listener
+        document.addEventListener('mousemove', onMouseMove) // Add mouse move event listener
 
-        const setSprite = (name: SpriteSet, frame: number) => {     // Set sprite based on name and frame
+        const setSprite = (name: SpriteSet, frame: number) => {
+            // Set sprite based on name and frame
             if (!nekoRef.current) return
             const sprite = spriteMap[name][frame % spriteMap[name].length]
             nekoRef.current.style.backgroundPosition = `${sprite[0] * 32}px ${sprite[1] * 32}px`
         }
 
-        const resetIdle = () => {   // Reset idle animation
+        const resetIdle = () => {
+            // Reset idle animation
             idleAnimation.current = null
             idleFrame.current = 0
         }
 
-        const idle = () => {    // Idle animation
+        const idle = () => {
+            // Idle animation
             idleTime.current += 1
             if (
                 idleTime.current > 10 &&
@@ -63,7 +67,8 @@ const NekoPet = () => {
             idleFrame.current += 1
         }
 
-        const frame = () => {   // Frame update function
+        const frame = () => {
+            // Frame update function
             frameCount.current += 1
 
             const dx = nekoPos.current.x - mousePos.current.x
@@ -100,9 +105,10 @@ const NekoPet = () => {
             }
         }
 
-        const interval = setInterval(frame, 100)    // Frame update interval
+        const interval = setInterval(frame, 100) // Frame update interval
 
-        return () => {  // Cleanup function
+        return () => {
+            // Cleanup function
             clearInterval(interval)
             document.removeEventListener('mousemove', onMouseMove)
             document.getElementById('neko-pet')?.remove() // Remove the neko pet element from the DOM

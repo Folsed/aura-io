@@ -1,27 +1,24 @@
 'use client'
 import { Button } from '@/components/ui/button'
 import Navbar from '@/components/ui/Navbar'
-import { useState } from 'react'
+import { decrement, increment, selectCount } from '@/store/features/counter/counterSlice'
+import { useAppDispatch, useAppSelector } from '@/store/hooks'
+import Link from 'next/link'
 
 export default function Home() {
-    const [counter, setCounter] = useState<number>(0)
+    const dispatch = useAppDispatch()
 
-    const increment = () => {
-        setCounter(prevCounter => prevCounter + 1)
-    }
-
-    const decrement = () => {
-        setCounter(prevCounter => prevCounter - 1)
-    }
+    const count = useAppSelector(selectCount)
 
     return (
         <main className='m-auto mx-4 lg:mx-8 xl:mx-24 2xl:mx-96'>
             <Navbar />
 
             <div className='absolute top-1/2 left-1/2 flex gap-2'>
-                <span>{counter}</span>
-                <Button onClick={increment}>+</Button>
-                <Button onClick={decrement}>-</Button>
+                <span>{count}</span>
+                <Button onClick={() => dispatch(increment())}>+</Button>
+                <Button onClick={() => dispatch(decrement())}>-</Button>
+                <Link href={'/testpage'}>GO</Link>
             </div>
         </main>
     )

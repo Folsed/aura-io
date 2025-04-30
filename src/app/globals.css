@@ -134,7 +134,7 @@
     body {
         @apply bg-background text-foreground;
     }
-    
+
     img {
         @apply h-full w-full object-cover select-none;
     }
