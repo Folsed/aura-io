@@ -7,10 +7,15 @@ import { useEffect, useState } from 'react'
 import moment from 'moment'
 
 const TemperatureBar = () => {
-    const { data, isError, isLoading, isSuccess } = useGetCurrentWeatherDataQuery({
-        lat: 44.34,
-        lon: 10.99,
-    })
+    const { data, isError, isLoading, isSuccess } = useGetCurrentWeatherDataQuery(
+        {
+            lat: 50.4418,
+            lon: 30.5104,
+        },
+        {
+            // pollingInterval: 60000,
+        }
+    )
     const { main, timezone = 0, name, weather } = data || {}
 
     const temp = kelvinToCelsius(main?.temp as number)
@@ -62,7 +67,7 @@ const TemperatureBar = () => {
                 <span className='font-medium'>{localTime}</span>
             </p>
             <p className='flex gap-1 pt-2 font-bold'>
-                <span>{name}</span>
+                <span className='text-primary'>{name}</span>
                 <span>
                     <Navigation />
                 </span>
