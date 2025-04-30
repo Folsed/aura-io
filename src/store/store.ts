@@ -1,12 +1,16 @@
 'use client'
 import { Action, combineSlices, configureStore, ThunkAction } from '@reduxjs/toolkit'
 import { counterSlice } from './features/counter/counterSlice'
+import { weatherApiSlice } from '@/store/features/weather/weatherApiSlice'
 
-const rootReducer = combineSlices(counterSlice)
+const rootReducer = combineSlices(counterSlice, weatherApiSlice)
 
 export const makeStore = () => {
     return configureStore({
         reducer: rootReducer,
+        middleware: getDefaultMiddleware => {
+            return getDefaultMiddleware().concat(weatherApiSlice.middleware)
+        },
     })
 }
 

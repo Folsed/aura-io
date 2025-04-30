@@ -4,5 +4,6 @@
     <mapping directory="" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../french_fluency" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/../javascript-repeat" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/../redux-next-example" vcs="Git" />
   </component>
 </project>
