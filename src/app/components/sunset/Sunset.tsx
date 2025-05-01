@@ -7,12 +7,8 @@ import { SunsetIcon } from 'lucide-react'
 
 const Sunset = () => {
     const coordinates = useAppSelector(selectCoordinates)
-    const { data, isLoading } = useGetCurrentWeatherDataQuery({
-        lat: 50.4418,
-        lon: 30.5104,
-    })
+    const { data, isLoading } = useGetCurrentWeatherDataQuery(coordinates)
     if (isLoading) return <p>Loading...</p>
-
 
     const timezpone = data?.timezone
 

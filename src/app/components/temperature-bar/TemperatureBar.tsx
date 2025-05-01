@@ -6,17 +6,14 @@ import { CloudDrizzle, CloudRain, CloudSnow, CloudSun, Cloudy, Navigation } from
 import { useEffect, useState } from 'react'
 import moment from 'moment'
 import TemperatureTimer from './TemperatureTimer'
+import { selectCoordinates } from '@/store/features/coordinates/coordinatesSlice'
+import { useAppSelector } from '@/store/hooks'
 
 const TemperatureBar = () => {
-    const { data, isError, isLoading, isSuccess } = useGetCurrentWeatherDataQuery(
-        {
-            lat: 50.4418,
-            lon: 30.5104,
-        },
-        {
-            // pollingInterval: 60000,
-        }
-    )
+    const coordinates = useAppSelector(selectCoordinates)
+    const { data, isError, isLoading, isSuccess } = useGetCurrentWeatherDataQuery(coordinates, {
+        // pollingInterval: 60000,
+    })
     const { main, timezone = 0, name, weather } = data || {}
 
     const temp = kelvinToCelsius(main?.temp as number)

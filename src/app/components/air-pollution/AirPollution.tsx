@@ -1,15 +1,18 @@
 'use client'
 import { Progress } from '@/components/ui/progress'
+import { selectCoordinates } from '@/store/features/coordinates/coordinatesSlice'
 import { useGetAirPollutionDataQuery } from '@/store/features/weather/weatherApiSlice'
+import { useAppSelector } from '@/store/hooks'
 import { airQulaityIndexText } from '@/utils/airQualityIndex'
 import { ThermometerSun } from 'lucide-react'
 
 const AirPollution = () => {
+    const coordinates = useAppSelector(selectCoordinates)
     const {
         data: airPollution,
         isLoading,
         isError,
-    } = useGetAirPollutionDataQuery({ lat: 50.4418, lon: 30.5104 })
+    } = useGetAirPollutionDataQuery(coordinates)
 
     if (isLoading) {
         return <p>Is Loading...</p>
