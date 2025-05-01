@@ -23,8 +23,6 @@ const TemperatureBar = () => {
     const tempMin = kelvinToCelsius(main?.temp_min as number)
     const tempMax = kelvinToCelsius(main?.temp_max as number)
 
-    console.log(0.1 + 0.2)
-
     const getIcon = () => {
         switch (weather?.[0]?.main) {
             case 'Drizzle':

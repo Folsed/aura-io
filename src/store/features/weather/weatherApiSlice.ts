@@ -17,6 +17,7 @@ export const weatherApiSlice = createApi({
                 { type: 'Weather', id: `${lat}${lon}` },
             ],
         }),
+        
     }),
 })
 
