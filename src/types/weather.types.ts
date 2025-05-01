@@ -59,3 +59,23 @@ export interface IWeatherForecast {
     name?: string | undefined
     cod?: number | undefined
 }
+
+export interface IAirPollution {
+    coord: [number, number]
+    list: Array<{
+        dt: number
+        main: {
+            aqi: number
+        }
+        components: {
+            co: number
+            no: number
+            no2: number
+            o3: number
+            so2: number
+            pm2_5: number
+            pm10: number
+            nh3: number
+        }
+    }>
+}
