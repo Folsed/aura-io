@@ -21,8 +21,6 @@ const AirPollution = () => {
         return item.rating === airQualityIndex
     })
 
-    console.log(airPollution?.list[0].main.aqi)
-
     return (
         <div className='air-pollution dark:bg-dark-grey sm-2:col-span-2 col-span-full flex h-[12rem] flex-col gap-8 rounded-lg border px-4 pt-6 shadow-sm md:col-span-2 xl:col-span-2 dark:shadow-none'>
             <h2 className='flex items-center gap-2 font-medium'>

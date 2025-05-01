@@ -1,9 +1,9 @@
 'use client'
 import { Action, combineSlices, configureStore, ThunkAction } from '@reduxjs/toolkit'
-import { counterSlice } from './features/counter/counterSlice'
 import { weatherApiSlice } from '@/store/features/weather/weatherApiSlice'
+import { coordinatesSlice } from './features/coordinates/coordinatesSlice'
 
-const rootReducer = combineSlices(counterSlice, weatherApiSlice)
+const rootReducer = combineSlices(weatherApiSlice, coordinatesSlice)
 
 export const makeStore = () => {
     return configureStore({
