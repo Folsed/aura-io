@@ -1,25 +1,32 @@
-import { IWeatherForecast } from '@/types'
+import { IAirPollution, IWeatherForecast } from '@/types'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
+
+const API_KEY = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY
 
 export const weatherApiSlice = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: process.env.NEXT_PUBLIC_OPENWEATHER_BASE_URL,
     }),
     reducerPath: 'weatherApi',
-    tagTypes: ['Weather'],
+    tagTypes: ['Weather', 'AirPollution'],
     endpoints: build => ({
         getCurrentWeatherData: build.query<IWeatherForecast, { lat: number; lon: number }>({
             query: ({ lat, lon }) => {
-                const apiKey = process.env.NEXT_PUBLIC_OPENWEATHER_API_KEY
-                return `data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}`
+                return `data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}`
             },
             providesTags: (result, _error, { lat, lon }) => [
                 { type: 'Weather', id: `${lat}${lon}` },
             ],
         }),
-        getAirPollu
-        
+        getAirPollutionData: build.query<IAirPollution, { lat: number; lon: number }>({
+            query: ({ lat, lon }) => {
+                return `data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${API_KEY}`
+            },
+            providesTags: (result, _error, { lat, lon }) => [
+                { type: 'AirPollution', id: `${lat}${lon}` },
+            ],
+        }),
     }),
 })
 
-export const { useGetCurrentWeatherDataQuery } = weatherApiSlice
+export const { useGetCurrentWeatherDataQuery, useGetAirPollutionDataQuery } = weatherApiSlice
