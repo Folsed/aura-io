@@ -5,6 +5,7 @@ import { kelvinToCelsius } from '@/utils/kelvinToCelsius'
 import { CloudDrizzle, CloudRain, CloudSnow, CloudSun, Cloudy, Navigation } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import moment from 'moment'
+import TemperatureTimer from './TemperatureTimer'
 
 const TemperatureBar = () => {
     const { data, isError, isLoading, isSuccess } = useGetCurrentWeatherDataQuery(
@@ -22,7 +23,7 @@ const TemperatureBar = () => {
     const tempMin = kelvinToCelsius(main?.temp_min as number)
     const tempMax = kelvinToCelsius(main?.temp_max as number)
 
-    console.log()
+    console.log(0.1 + 0.2)
 
     const getIcon = () => {
         switch (weather?.[0]?.main) {
@@ -41,31 +42,12 @@ const TemperatureBar = () => {
         }
     }
 
-    const [localTime, setLocalTime] = useState<string>('')
-    const [currentDay, setCurrentDay] = useState<string>('')
-
-    useEffect(() => {
-        const interval = setInterval(() => {
-            const localMoment = moment().utcOffset(timezone / 60)
-            const formatedTime = localMoment.format('HH:mm:ss')
-            const day = localMoment.format('dddd')
-
-            setLocalTime(formatedTime)
-            setCurrentDay(day)
-        }, 1000)
-
-        return () => clearInterval(interval)
-    }, [timezone])
-
     if (isLoading) return <p>Loading…</p>
     if (isError || !data) return <p>Error loading weather</p>
 
     return (
         <div className='dark:bg-dark-grey flex flex-col justify-between rounded-lg border px-4 pt-6 pb-5 shadow-sm dark:shadow-none'>
-            <p className='flex items-center justify-between'>
-                <span className='font-medium'>{currentDay}</span>
-                <span className='font-medium'>{localTime}</span>
-            </p>
+            <TemperatureTimer timezone={timezone} />
             <p className='flex gap-1 pt-2 font-bold'>
                 <span className='text-primary'>{name}</span>
                 <span>
