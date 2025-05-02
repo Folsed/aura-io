@@ -90,7 +90,7 @@ export interface IDailyForecast {
     cod: string
     message: number
     cnt: number
-    list: List[]
+    list: IDailyForecastList[]
     city: City
 }
 
@@ -110,7 +110,7 @@ export interface Coord {
     lon: number
 }
 
-export interface List {
+export interface IDailyForecastList {
     dt: number
     main: Main
     weather: Weather[]
@@ -120,7 +120,7 @@ export interface List {
     pop: number
     rain?: Rain
     sys: Sys
-    dt_txt: Date
+    dt_txt: string
 }
 
 export interface Clouds {

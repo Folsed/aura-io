@@ -1,10 +1,6 @@
 import { CloudDrizzle, CloudRain, CloudSnow, CloudSun, Cloudy } from 'lucide-react'
 import { JSX } from 'react'
 
-interface IWeatherIconProps {
-    condition: string
-}
-
 export const getWeatherIcon = (condition: string): JSX.Element => {
     switch (condition) {
         case 'Drizzle':

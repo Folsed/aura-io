@@ -2,14 +2,15 @@
 import { Action, combineSlices, configureStore, ThunkAction } from '@reduxjs/toolkit'
 import { weatherApiSlice } from '@/store/features/weather/weatherApiSlice'
 import { coordinatesSlice } from './features/coordinates/coordinatesSlice'
+import { uvApiSlice } from './features/weather/uvApiSlice'
 
-const rootReducer = combineSlices(weatherApiSlice, coordinatesSlice)
+const rootReducer = combineSlices(weatherApiSlice, coordinatesSlice, uvApiSlice)
 
 export const makeStore = () => {
     return configureStore({
         reducer: rootReducer,
         middleware: getDefaultMiddleware => {
-            return getDefaultMiddleware().concat(weatherApiSlice.middleware)
+            return getDefaultMiddleware().concat(weatherApiSlice.middleware, uvApiSlice.middleware)
         },
     })
 }
