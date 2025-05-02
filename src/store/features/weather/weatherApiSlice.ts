@@ -37,4 +37,8 @@ export const weatherApiSlice = createApi({
     }),
 })
 
-export const { useGetCurrentWeatherDataQuery, useGetAirPollutionDataQuery, useGetDailyForecastDataQuery } = weatherApiSlice
+export const {
+    useGetCurrentWeatherDataQuery,
+    useGetAirPollutionDataQuery,
+    useGetDailyForecastDataQuery,
+} = weatherApiSlice

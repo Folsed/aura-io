@@ -14,7 +14,9 @@ const Population = () => {
     return (
         <div className='dark:bg-dark-grey flex h-[12rem] flex-col gap-8 rounded-lg border px-4 pt-6 pb-5 shadow-sm dark:shadow-none'>
             <div className='top'>
-                <h2 className='flex items-center gap-2 font-medium'><UsersIcon/> Population</h2>
+                <h2 className='flex items-center gap-2 font-medium'>
+                    <UsersIcon /> Population
+                </h2>
                 <p className='pt-4 text-2xl'>{formatNumber(Number(data?.city.population))}</p>
             </div>
             <p className='text-sm'>Latest UN population data for {data?.city.name}.</p>

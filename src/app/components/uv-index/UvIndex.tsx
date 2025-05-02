@@ -18,14 +18,18 @@ const UvIndex = () => {
     return (
         <div className='dark:bg-dark-grey flex h-[12rem] flex-col gap-5 rounded-lg border px-4 pt-6 pb-5 shadow-sm dark:shadow-none'>
             <div className='top'>
-                <h2 className='flex items-center gap-2 font-medium'><SunIcon/> Uv Index</h2>
+                <h2 className='flex items-center gap-2 font-medium'>
+                    <SunIcon /> Uv Index
+                </h2>
                 <div className='flex flex-col gap-1 pt-4'>
                     <p className='text-2xl'>
                         {uvIndexMax}
-                        <span className='text-sm'>({uvIndexCategory(Number(uvIndexMax)).text})</span>
+                        <span className='text-sm'>
+                            ({uvIndexCategory(Number(uvIndexMax)).text})
+                        </span>
                     </p>
 
-                    <Progress value={marginLeftPercentage} max={14} className='progress'/>
+                    <Progress value={marginLeftPercentage} max={14} className='progress' />
                 </div>
             </div>
 

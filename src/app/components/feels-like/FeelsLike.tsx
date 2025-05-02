@@ -18,7 +18,9 @@ const FeelsLike = () => {
     return (
         <div className='dark:bg-dark-grey flex h-[12rem] flex-col gap-8 rounded-lg border px-4 pt-6 pb-5 shadow-sm dark:shadow-none'>
             <div className='top'>
-                <h2 className='flex items-center gap-2 font-medium'><Thermometer/> Feels Like</h2>
+                <h2 className='flex items-center gap-2 font-medium'>
+                    <Thermometer /> Feels Like
+                </h2>
                 <p className='pt-4 text-3xl'>{kelvinToCelsius(feels_like)}°</p>
             </div>
 

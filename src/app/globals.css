@@ -173,15 +173,17 @@
             rgba(178, 34, 34, 1) 100%
         );
     }
+    .temperature {
+        background-image: linear-gradient(to right, #00dfff 0%, #00f9ff 20%, yellow);
+    }
+}
+@media screen and (max-width: 1010px) {
+    .mapbox-container {
+        flex-direction: column;
+    }
 
-    @media screen and (max-width: 1010px) {
-        .mapbox-container {
-            flex-direction: column;
-        }
-
-        .mapbox-container > div:first-child {
-            height: 24rem;
-            flex: initial;
-        }
+    .mapbox-container > div:first-child {
+        height: 24rem;
+        flex: initial;
     }
 }
