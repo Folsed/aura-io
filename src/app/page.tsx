@@ -9,6 +9,7 @@ import Population from './components/population/Population'
 import FeelsLike from './components/feels-like/FeelsLike'
 import Humidity from './components/humidity/Humidity'
 import Visibility from './components/visibility/Visibility'
+import Pressure from './components/pressure/Pressure'
 
 export default function Home() {
     return (
@@ -29,6 +30,7 @@ export default function Home() {
                         <FeelsLike />
                         <Humidity />
                         <Visibility />
+                        <Pressure/>
                     </div>
                 </div>
             </div>
