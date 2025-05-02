@@ -3,8 +3,6 @@
 import { useGetCurrentWeatherDataQuery } from '@/store/features/weather/weatherApiSlice'
 import { kelvinToCelsius } from '@/utils/kelvinToCelsius'
 import { CloudDrizzle, CloudRain, CloudSnow, CloudSun, Cloudy, Navigation } from 'lucide-react'
-import { useEffect, useState } from 'react'
-import moment from 'moment'
 import TemperatureTimer from './TemperatureTimer'
 import { selectCoordinates } from '@/store/features/coordinates/coordinatesSlice'
 import { useAppSelector } from '@/store/hooks'
@@ -14,7 +12,7 @@ const TemperatureBar = () => {
     const { data, isError, isLoading, isSuccess } = useGetCurrentWeatherDataQuery(coordinates, {
         // pollingInterval: 60000,
     })
-    const { main, timezone = 0, name, weather } = data || {}
+    const { main, timezone, name, weather } = data || {}
 
     const temp = kelvinToCelsius(main?.temp as number)
     const tempMin = kelvinToCelsius(main?.temp_min as number)
@@ -42,7 +40,7 @@ const TemperatureBar = () => {
 
     return (
         <div className='dark:bg-dark-grey flex flex-col justify-between rounded-lg border px-4 pt-6 pb-5 shadow-sm dark:shadow-none'>
-            <TemperatureTimer timezone={timezone} />
+            <TemperatureTimer timezone={Number(timezone)} />
             <p className='flex gap-1 pt-2 font-bold'>
                 <span className='text-primary'>{name}</span>
                 <span>

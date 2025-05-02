@@ -26,6 +26,7 @@ export const weatherApiSlice = createApi({
                 { type: 'AirPollution', id: `${lat}${lon}` },
             ],
         }),
+        // getDailyForecastData: build.query
     }),
 })
 

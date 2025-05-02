@@ -8,11 +8,7 @@ import { ThermometerSun } from 'lucide-react'
 
 const AirPollution = () => {
     const coordinates = useAppSelector(selectCoordinates)
-    const {
-        data: airPollution,
-        isLoading,
-        isError,
-    } = useGetAirPollutionDataQuery(coordinates)
+    const { data: airPollution, isLoading, isError } = useGetAirPollutionDataQuery(coordinates)
 
     if (isLoading) {
         return <p>Is Loading...</p>

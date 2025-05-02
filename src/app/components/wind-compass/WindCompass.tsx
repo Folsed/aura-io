@@ -19,14 +19,13 @@ const WindCompass = () => {
                     <Image
                         src='/svgs/compass_arrow.svg'
                         alt='compass'
-                        className="absolute w-[11px] h-[11px] top-1/2 left-1/2 transition-all duration-500 ease-in-out -translate-x-1/2 -translate-y-1/2 dark:invert"
+                        className='absolute top-1/2 left-1/2 h-[11px] w-[11px] -translate-x-1/2 -translate-y-1/2 transition-all duration-500 ease-in-out dark:invert'
                         style={{
                             transform: `rotate(${data?.wind?.deg}deg)`,
                             height: '100%',
                         }}
                         width={11}
                         height={11}
-
                     />
                 </div>
                 <p className='absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[-50%] text-xs font-medium dark:text-white'>

@@ -1,5 +1,5 @@
 import moment from 'moment'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const TemperatureTimer = ({ timezone }: { timezone: number }) => {
     const [localTime, setLocalTime] = useState<string>('')
@@ -16,6 +16,7 @@ const TemperatureTimer = ({ timezone }: { timezone: number }) => {
 
         return () => clearInterval(interval)
     }, [timezone])
+
     return (
         <p className='flex items-center justify-between'>
             <span className='font-medium'>{currentDay}</span>
@@ -23,4 +24,4 @@ const TemperatureTimer = ({ timezone }: { timezone: number }) => {
         </p>
     )
 }
-export default TemperatureTimer
+export default React.memo(TemperatureTimer)
