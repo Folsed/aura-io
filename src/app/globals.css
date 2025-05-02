@@ -173,4 +173,15 @@
             rgba(178, 34, 34, 1) 100%
         );
     }
+
+    @media screen and (max-width: 1010px) {
+        .mapbox-container {
+            flex-direction: column;
+        }
+
+        .mapbox-container > div:first-child {
+            height: 24rem;
+            flex: initial;
+        }
+    }
 }
