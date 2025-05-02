@@ -15,8 +15,6 @@ const UvIndex = () => {
     const uvIndexMax = data?.daily.uv_index_max[0].toFixed(0)
     const marginLeftPercentage = (Number(uvIndexMax) / 14) * 100
 
-    console.log(data)
-
     return (
         <div className='dark:bg-dark-grey flex h-[12rem] flex-col gap-5 rounded-lg border px-4 pt-6 pb-5 shadow-sm dark:shadow-none'>
             <div className='top'>

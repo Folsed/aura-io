@@ -1,3 +1,4 @@
+'use client'
 import { selectCoordinates } from '@/store/features/coordinates/coordinatesSlice'
 import { useGetCurrentWeatherDataQuery } from '@/store/features/weather/weatherApiSlice'
 import { useAppSelector } from '@/store/hooks'

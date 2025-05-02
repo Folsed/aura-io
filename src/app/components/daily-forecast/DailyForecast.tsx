@@ -1,3 +1,4 @@
+'use client'
 import { Carousel, CarouselContent, CarouselItem } from '@/components/ui/carousel'
 import { selectCoordinates } from '@/store/features/coordinates/coordinatesSlice'
 import {

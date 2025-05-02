@@ -1,4 +1,3 @@
-'use client'
 import Navbar from '@/components/ui/Navbar'
 import TemperatureBar from './components/temperature-bar/TemperatureBar'
 import AirPollution from './components/air-pollution/AirPollution'
@@ -8,6 +7,7 @@ import DailyForecast from './components/daily-forecast/DailyForecast'
 import UvIndex from './components/uv-index/UvIndex'
 import Population from './components/population/Population'
 import FeelsLike from './components/feels-like/FeelsLike'
+import Humidity from './components/humidity/Humidity'
 
 export default function Home() {
     return (
@@ -26,6 +26,7 @@ export default function Home() {
                         <UvIndex />
                         <Population />
                         <FeelsLike />
+                        <Humidity />
                     </div>
                 </div>
             </div>
