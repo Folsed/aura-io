@@ -6,6 +6,7 @@ import { CloudDrizzle, CloudRain, CloudSnow, CloudSun, Cloudy, Navigation } from
 import TemperatureTimer from './TemperatureTimer'
 import { selectCoordinates } from '@/store/features/coordinates/coordinatesSlice'
 import { useAppSelector } from '@/store/hooks'
+import { getWeatherIcon } from '@/utils/getWeatherIcon'
 
 const TemperatureBar = () => {
     const coordinates = useAppSelector(selectCoordinates)
@@ -17,23 +18,6 @@ const TemperatureBar = () => {
     const temp = kelvinToCelsius(main?.temp as number)
     const tempMin = kelvinToCelsius(main?.temp_min as number)
     const tempMax = kelvinToCelsius(main?.temp_max as number)
-
-    const getIcon = () => {
-        switch (weather?.[0]?.main) {
-            case 'Drizzle':
-                return <CloudDrizzle />
-            case 'Rain':
-                return <CloudRain />
-            case 'Snow':
-                return <CloudSnow />
-            case 'Clear':
-                return <CloudSun />
-            case 'Clouds':
-                return <Cloudy />
-            default:
-                return <CloudSun />
-        }
-    }
 
     if (isLoading) return <p>Loading…</p>
     if (isError || !data) return <p>Error loading weather</p>
@@ -51,7 +35,7 @@ const TemperatureBar = () => {
 
             <div>
                 <div>
-                    <span>{getIcon()}</span>
+                    <span>{getWeatherIcon(String(weather?.[0]?.main))}</span>
                     <p className='pt-2 text-lg font-medium capitalize'>
                         {weather?.[0].description}
                     </p>
