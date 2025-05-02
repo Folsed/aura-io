@@ -7,6 +7,7 @@ import WindCompass from './components/wind-compass/WindCompass'
 import DailyForecast from './components/daily-forecast/DailyForecast'
 import UvIndex from './components/uv-index/UvIndex'
 import Population from './components/population/Population'
+import FeelsLike from './components/feels-like/FeelsLike'
 
 export default function Home() {
     return (
@@ -24,6 +25,7 @@ export default function Home() {
                         <DailyForecast />
                         <UvIndex />
                         <Population />
+                        <FeelsLike />
                     </div>
                 </div>
             </div>

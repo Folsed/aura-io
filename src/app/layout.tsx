@@ -27,8 +27,7 @@ export default function RootLayout({
                 <div className='antialiased'>
                     <Providers>
                         {/* <Navbar/> */}
-                        {/* <NekoPet /> */}
-                        {/* <ToggleThemeButton /> */}
+                        <NekoPet />
                         {children}
                     </Providers>
                 </div>
