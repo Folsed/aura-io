@@ -9,8 +9,8 @@ function Navbar() {
         const saved = localStorage.getItem('neko')
         const neko = document.getElementById('neko-pet')
         if (saved === 'off' && neko) {
-            neko.classList.remove('block')
-            neko.classList.add('hidden')
+            neko.classList.remove('sm:block')
+            neko.classList.add('sm:hidden')
         }
     }, [])
 
@@ -18,13 +18,13 @@ function Navbar() {
         const neko = document.getElementById('neko-pet')
         if (!neko) return
 
-        if (!neko.classList.contains('hidden')) {
-            neko.classList.remove('block')
-            neko.classList.add('hidden')
+        if (!neko.classList.contains('sm:hidden')) {
+            neko.classList.remove('sm:block')
+            neko.classList.add('sm:hidden')
             localStorage.setItem('neko', 'off')
         } else {
-            neko.classList.remove('hidden')
-            neko.classList.add('block')
+            neko.classList.remove('sm:hidden')
+            neko.classList.add('sm:block')
             localStorage.setItem('neko', 'on')
         }
     }
@@ -37,7 +37,7 @@ function Navbar() {
 
                 <div className='btn-group flex items-center gap-2'>
                     <ToggleThemeButton />
-                    <Button onClick={handleHideNeko} variant='outline'>
+                    <Button onClick={handleHideNeko} className='hidden sm:block' variant='outline' title='Hide neko'>
                         <CatIcon />
                     </Button>
 

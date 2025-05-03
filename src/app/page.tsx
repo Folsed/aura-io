@@ -14,6 +14,7 @@ import Pressure from './components/pressure/Pressure'
 import Mapbox from './components/mapbox/Mapbox'
 import TopLargeSities from './components/top-large-cities/TopLargeSities'
 import FiveDaysForecast from './components/five-days-forecast/FiveDaysForecast'
+import WeatherHistoryChart from './components/weather-history-chart/WeatherHistoryChart'
 
 export default function Home() {
     return (
@@ -37,9 +38,9 @@ export default function Home() {
                         <Visibility />
                         <Pressure />
                     </div>
-                    <div className='mapbox-container mt-4 flex gap-4'>
-                        {/* <Mapbox /> */}
-                        <TopLargeSities />
+                    <div className='mt-4 flex gap-4'>
+                        <WeatherHistoryChart/>
+                        {/* <TopLargeSities /> */}
                     </div>
                 </div>
             </div>
