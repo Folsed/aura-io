@@ -36,9 +36,9 @@ export const weatherApiSlice = createApi({
         }),
         getSearchedCountry: build.query<ICountry, { searchInput: string }>({
             query: searchInput => {
-                return `geo/1.0/direct?q=${searchInput}&limit=5&appid=${API_KEY}`
+                return `geo/1.0/direct?q=${searchInput.searchInput}&limit=5&appid=${API_KEY}`
             },
-            providesTags: (result, _error, { searchInput }) => [
+            providesTags: (result, _error) => [
                 { type: 'SearchCountry', id: `${result?.lat}${result?.lon}` },
             ],
         }),
@@ -49,5 +49,5 @@ export const {
     useGetCurrentWeatherDataQuery,
     useGetAirPollutionDataQuery,
     useGetDailyForecastDataQuery,
-    useGetSearchedCountryQuery
+    useGetSearchedCountryQuery,
 } = weatherApiSlice

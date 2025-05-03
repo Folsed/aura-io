@@ -1,11 +1,30 @@
+'use client'
 import { CommandIcon } from 'lucide-react'
 import { Button } from '../ui/button'
-import { Dialog, DialogContent, DialogTitle, DialogTrigger } from '../ui/dialog'
+import {
+    Dialog,
+    DialogContent,
+    DialogFooter,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from '../ui/dialog'
 import { Input } from '../ui/input'
 import { Label } from '../ui/label'
 import { Command, CommandInput } from '../ui/command'
+import { useGetSearchedCountryQuery } from '@/store/features/weather/weatherApiSlice'
+import { useEffect, useState } from 'react'
+import { DialogDescription } from '@radix-ui/react-dialog'
 
 const SearchDialog = () => {
+    const [searchInput, setSearchInput] = useState('')
+    const { data, isLoading } = useGetSearchedCountryQuery({ searchInput: searchInput })
+
+
+    const handleSearchInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchInput(e.target.value)
+    }
+
     return (
         <Dialog>
             <DialogTrigger asChild>
@@ -20,7 +39,10 @@ const SearchDialog = () => {
             <DialogContent className='p-2'>
                 <DialogTitle className='hidden'>Search</DialogTitle>
                 <Command className='rounded-lg border shadow-md'>
-                    <CommandInput placeholder='Type a command or search...' />
+                    <CommandInput
+                        placeholder='Type a command or search...'
+                        onChangeCapture={handleSearchInput}
+                    />
                     <ul className='px-3 pb-2'>
                         <p className='text-muted-foreground p-2 text-sm'>Suggestions</p>
                     </ul>
