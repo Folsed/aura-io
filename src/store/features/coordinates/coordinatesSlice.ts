@@ -7,12 +7,21 @@ export interface ICoordinatesSliceState {
     }
 }
 
+const getInitialCoordinates = (): { lat: number; lon: number } => {
+    if (typeof window !== 'undefined') {
+        const saved = localStorage.getItem('current-city-coordinates')
+        if (saved) {
+            try {
+                return JSON.parse(saved)
+            } catch {}
+        }
+    }
+    // fallback to Kyiv
+    return { lat: 50.4500336, lon: 30.5241361 }
+}
 // Default coordinates for Kyiv, Ukraine
 const initialState: ICoordinatesSliceState = {
-    value: {
-        lat: 52.4356,
-        lon: 30.5008,
-    },
+    value: getInitialCoordinates(),
 }
 
 export const coordinatesSlice = createSlice({

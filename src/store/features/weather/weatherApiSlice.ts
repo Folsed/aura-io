@@ -40,7 +40,10 @@ export const weatherApiSlice = createApi({
             },
             providesTags: result =>
                 result
-                    ? result.map(item => ({ type: 'SearchCountry' as const, id: `${item.lat}${item.lon}` }))
+                    ? result.map(item => ({
+                          type: 'SearchCountry' as const,
+                          id: `${item.lat}${item.lon}`,
+                      }))
                     : [],
         }),
     }),

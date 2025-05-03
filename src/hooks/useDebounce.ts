@@ -7,13 +7,13 @@ const useDebounce = <T>(value: T, delay: number) => {
     useEffect(() => {
         const handler = setTimeout(() => {
             setDebValue(value)
-        }, delay);
+        }, delay)
 
         return () => {
             clearTimeout(handler)
         }
     }, [value, delay])
-    
+
     return debValue
 }
 
