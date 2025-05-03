@@ -11,7 +11,6 @@ const Humidity = () => {
     if (isLoading) return <b>Loading...</b>
 
     const { humidity } = data?.main || {}
-    console.log(humidity)
 
     return (
         <div className='dark:bg-dark-grey flex h-[12rem] flex-col gap-8 rounded-lg border px-4 pt-6 pb-5 shadow-sm dark:shadow-none'>

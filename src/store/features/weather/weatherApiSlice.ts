@@ -34,13 +34,14 @@ export const weatherApiSlice = createApi({
                 { type: 'DailyForecast', id: `${lat}${lon}` },
             ],
         }),
-        getSearchedCountry: build.query<ICountry, { searchInput: string }>({
-            query: searchInput => {
-                return `geo/1.0/direct?q=${searchInput.searchInput}&limit=5&appid=${API_KEY}`
+        getSearchedCountry: build.query<ICountry[], { searchInput: string }>({
+            query: ({ searchInput }) => {
+                return `geo/1.0/direct?q=${searchInput}&limit=5&appid=${API_KEY}`
             },
-            providesTags: (result, _error) => [
-                { type: 'SearchCountry', id: `${result?.lat}${result?.lon}` },
-            ],
+            providesTags: result =>
+                result
+                    ? result.map(item => ({ type: 'SearchCountry' as const, id: `${item.lat}${item.lon}` }))
+                    : [],
         }),
     }),
 })

@@ -42,8 +42,6 @@ const FiveDaysForecast = () => {
         dailyForecasts.push(processData(dailyData))
     }
 
-    console.log(dailyForecasts)
-
     return (
         <div className='dark:bg-dark-grey flex flex-1 flex-col justify-between rounded-lg border px-4 pt-6 pb-5 shadow-sm dark:shadow-none'>
             <div>

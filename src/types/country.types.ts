@@ -4,6 +4,7 @@ export interface ICountry {
     lat: number
     lon: number
     country: string
+    state?: string
 }
 
 export interface ICountryLocalNames {
