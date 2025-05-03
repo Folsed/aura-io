@@ -1,4 +1,4 @@
-import { IUvIndex } from '@/types/uvIndex'
+import { IUvIndex } from '@/types'
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 
 export const uvApiSlice = createApi({

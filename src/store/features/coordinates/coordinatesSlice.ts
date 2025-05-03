@@ -10,8 +10,8 @@ export interface ICoordinatesSliceState {
 // Default coordinates for Kyiv, Ukraine
 const initialState: ICoordinatesSliceState = {
     value: {
-        lat: 47.8196,
-        lon: 35.1617,
+        lat: 52.4356,
+        lon: 30.5008,
     },
 }
 
