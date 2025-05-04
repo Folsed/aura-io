@@ -41,8 +41,8 @@ const SearchDialog = () => {
         <Dialog>
             <DialogTrigger asChild>
                 <Button variant='outline' className='border'>
-                    <p className='hidden sm:block text-muted-foreground text-lg'>Search here...</p>
-                    <div className='sm:ml-[10rem] flex items-center gap-2 rounded-sm bg-slate-200 py-[2px] pr-[7px] pl-[5px] dark:bg-[#262626]'>
+                    <p className='text-muted-foreground hidden text-lg sm:block'>Search here...</p>
+                    <div className='flex items-center gap-2 rounded-sm bg-slate-200 py-[2px] pr-[7px] pl-[5px] sm:ml-[10rem] dark:bg-[#262626]'>
                         <CommandIcon />
                         <span className='text-sm'>Search</span>
                     </div>

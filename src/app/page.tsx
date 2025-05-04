@@ -11,8 +11,6 @@ import FeelsLike from './components/feels-like/FeelsLike'
 import Humidity from './components/humidity/Humidity'
 import Visibility from './components/visibility/Visibility'
 import Pressure from './components/pressure/Pressure'
-import Mapbox from './components/mapbox/Mapbox'
-import TopLargeSities from './components/top-large-cities/TopLargeSities'
 import FiveDaysForecast from './components/five-days-forecast/FiveDaysForecast'
 import WeatherHistoryChart from './components/weather-history-chart/WeatherHistoryChart'
 
@@ -39,7 +37,7 @@ export default function Home() {
                         <Pressure />
                     </div>
                     <div className='mt-4 flex gap-4'>
-                        <WeatherHistoryChart/>
+                        <WeatherHistoryChart />
                         {/* <TopLargeSities /> */}
                     </div>
                 </div>

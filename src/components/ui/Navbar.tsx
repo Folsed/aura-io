@@ -37,7 +37,12 @@ function Navbar() {
 
                 <div className='btn-group flex items-center gap-2'>
                     <ToggleThemeButton />
-                    <Button onClick={handleHideNeko} className='hidden sm:block' variant='outline' title='Hide neko'>
+                    <Button
+                        onClick={handleHideNeko}
+                        className='hidden sm:block'
+                        variant='outline'
+                        title='Hide neko'
+                    >
                         <CatIcon />
                     </Button>
 

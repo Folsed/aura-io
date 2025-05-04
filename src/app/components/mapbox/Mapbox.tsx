@@ -19,7 +19,7 @@ const Mapbox = () => {
     const coordinates = useAppSelector(selectCoordinates)
 
     return (
-        <div className='flex-1 basis-[50%] rounded-lg border h-[500px]'>
+        <div className='h-[500px] flex-1 basis-[50%] rounded-lg border'>
             <MapContainer
                 center={[coordinates.lat, coordinates.lon]}
                 zoom={13}

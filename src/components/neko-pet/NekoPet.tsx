@@ -118,7 +118,7 @@ const NekoPet = () => {
     return (
         <div
             id='neko-pet'
-            className='pointer-events-none absolute top-2 left-2 z-[99999] h-8 w-8 bg-[url(/gifs/neko.gif)] [image-rendering:pixelated] hidden'
+            className='pointer-events-none absolute top-2 left-2 z-[99999] hidden h-8 w-8 bg-[url(/gifs/neko.gif)] [image-rendering:pixelated]'
             ref={nekoRef}
         />
     )
