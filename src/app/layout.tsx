@@ -4,6 +4,7 @@ import './globals.css'
 import React from 'react'
 import Providers from '@/providers/Providers'
 import NekoPet from '@/components/neko-pet/NekoPet'
+import Footer from '@/components/ui/Footer'
 
 const karla = Karla({
     subsets: ['latin'],
@@ -26,6 +27,7 @@ export default function RootLayout({
                     <Providers>
                         <NekoPet />
                         {children}
+                        <Footer />
                     </Providers>
                 </div>
             </body>
