@@ -16,7 +16,7 @@ import WeatherHistoryChart from './components/weather-history-chart/WeatherHisto
 
 export default function Home() {
     return (
-        <main className='texture m-auto mx-[1rem] lg:mx-[2rem] xl:mx-[6rem] 2xl:mx-[16rem]'>
+        <main className='texture m-auto mx-[1rem] min-h-screen lg:mx-[2rem] xl:mx-[6rem] 2xl:mx-[16rem]'>
             <Navbar />
             <div className='flex flex-col gap-4 pb-4 md:flex-row'>
                 <div className='flex w-full min-w-[18rem] flex-col gap-4 md:w-[35rem]'>

@@ -8,7 +8,7 @@ const eslintConfig = [
     ...compat.config({
         extends: ['eslint:recommended', 'next'],
         rules: {
-            'no-unused-vars': false,
+            'no-unused-vars':'off',
         },
     }),
 ]

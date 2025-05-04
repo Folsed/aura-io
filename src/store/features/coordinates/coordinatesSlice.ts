@@ -11,9 +11,7 @@ const getInitialCoordinates = (): { lat: number; lon: number } => {
     if (typeof window !== 'undefined') {
         const saved = localStorage.getItem('current-city-coordinates')
         if (saved) {
-            try {
-                return JSON.parse(saved)
-            } catch {}
+            return JSON.parse(saved)
         }
     }
     // fallback to Kyiv

@@ -11,7 +11,7 @@ import {
 } from '../ui/dialog'
 import { Command, CommandInput } from '../ui/command'
 import { useGetSearchedCountryQuery } from '@/store/features/weather/weatherApiSlice'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import useDebounce from '@/hooks/useDebounce'
 import { useAppDispatch } from '@/store/hooks'
 import { setCoordinates } from '@/store/features/coordinates/coordinatesSlice'

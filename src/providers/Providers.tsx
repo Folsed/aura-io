@@ -1,6 +1,7 @@
 import React from 'react'
 import { ThemeProvider } from 'next-themes'
 import StoreProvider from './StoreProvider'
+import SplashScreenProvider from './SplashScreenProvider'
 
 const Providers = ({ children }: { children: React.ReactNode }) => {
     return (
@@ -11,7 +12,7 @@ const Providers = ({ children }: { children: React.ReactNode }) => {
                 enableSystem
                 disableTransitionOnChange
             >
-                {children}
+                <SplashScreenProvider>{children}</SplashScreenProvider>
             </ThemeProvider>
         </StoreProvider>
     )
