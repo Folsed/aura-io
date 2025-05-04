@@ -4,9 +4,6 @@ import './globals.css'
 import React from 'react'
 import Providers from '@/providers/Providers'
 import NekoPet from '@/components/neko-pet/NekoPet'
-import { Button } from '@/components/ui/button'
-import Navbar from '@/components/ui/Navbar'
-import ShaderCanvas from '@/components/ui/ShaderCanvas'
 
 const karla = Karla({
     subsets: ['latin'],
@@ -27,8 +24,6 @@ export default function RootLayout({
             <body className={`${karla.className} bg-zin`}>
                 <div className='antialiased'>
                     <Providers>
-                        {/* <ShaderCanvas/> */}
-                        {/* <Navbar/> */}
                         <NekoPet />
                         {children}
                     </Providers>
