@@ -1,0 +1,106 @@
+D:\Programming\Git\aura-io
+
+├── src
+|  ├── app
+|  |  ├── components
+|  |  |  ├── air-pollution
+|  |  |  |  └── AirPollution.tsx
+|  |  |  ├── daily-forecast
+|  |  |  |  └── DailyForecast.tsx
+|  |  |  ├── feels-like
+|  |  |  |  └── FeelsLike.tsx
+|  |  |  ├── five-days-forecast
+|  |  |  |  └── FiveDaysForecast.tsx
+|  |  |  ├── humidity
+|  |  |  |  └── Humidity.tsx
+|  |  |  ├── mapbox
+|  |  |  |  └── Mapbox.tsx
+|  |  |  ├── population
+|  |  |  |  └── Population.tsx
+|  |  |  ├── pressure
+|  |  |  |  └── Pressure.tsx
+|  |  |  ├── sunset
+|  |  |  |  └── Sunset.tsx
+|  |  |  ├── temperature-bar
+|  |  |  |  ├── TemperatureBar.tsx
+|  |  |  |  └── TemperatureTimer.tsx
+|  |  |  ├── top-large-cities
+|  |  |  |  └── TopLargeSities.tsx
+|  |  |  ├── uv-index
+|  |  |  |  └── UvIndex.tsx
+|  |  |  ├── visibility
+|  |  |  |  └── Visibility.tsx
+|  |  |  ├── weather-history-chart
+|  |  |  |  └── WeatherHistoryChart.tsx
+|  |  |  └── wind-compass
+|  |  |     └── WindCompass.tsx
+|  |  ├── favicon.ico
+|  |  ├── globals.css
+|  |  ├── layout.tsx
+|  |  ├── page.tsx
+|  |  └── texture.css
+|  ├── components
+|  |  ├── neko-pet
+|  |  |  ├── NekoPet.tsx
+|  |  |  └── _spriteMap.ts
+|  |  ├── search-dialog
+|  |  |  └── SearchDialog.tsx
+|  |  ├── toggle-theme-button
+|  |  |  └── ToggleThemeButton.tsx
+|  |  └── ui
+|  |     ├── button.tsx
+|  |     ├── card.tsx
+|  |     ├── carousel.tsx
+|  |     ├── chart.tsx
+|  |     ├── command.tsx
+|  |     ├── dialog.tsx
+|  |     ├── dropdown-menu.tsx
+|  |     ├── Footer.tsx
+|  |     ├── input.tsx
+|  |     ├── label.tsx
+|  |     ├── Navbar.tsx
+|  |     ├── progress.tsx
+|  |     └── select.tsx
+|  ├── hooks
+|  |  └── useDebounce.ts
+|  ├── lib
+|  |  └── utils.ts
+|  ├── providers
+|  |  ├── Providers.tsx
+|  |  ├── SplashScreenProvider.tsx
+|  |  └── StoreProvider.tsx
+|  ├── services
+|  |  └── axios.ts
+|  ├── store
+|  |  ├── features
+|  |  |  ├── coordinates
+|  |  |  |  └── coordinatesSlice.ts
+|  |  |  └── weather
+|  |  |     ├── archiveWeatherApiSlice.ts
+|  |  |     ├── uvApiSlice.ts
+|  |  |     └── weatherApiSlice.ts
+|  |  ├── hooks.ts
+|  |  └── store.ts
+|  ├── types
+|  |  ├── archiveWeather.types.ts
+|  |  ├── country.types.ts
+|  |  ├── index.ts
+|  |  ├── uvIndex.types.ts
+|  |  └── weather.types.ts
+|  └── utils
+|     ├── airQualityIndex.ts
+|     ├── defaultStates.ts
+|     ├── feelsLikeText.ts
+|     ├── formatPopulationNumber.ts
+|     ├── getHumidityText.ts
+|     ├── getPressureDescription.ts
+|     ├── getVisibilityDescription.ts
+|     ├── getWeatherIcon.tsx
+|     ├── isInView.ts
+|     ├── kelvinToCelsius.ts
+|     ├── unixTo.ts
+|     └── uvIndexCategory.ts
+└── tsconfig.json
+
+directory: 1876 file: 13279
+

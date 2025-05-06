@@ -13,5 +13,6 @@
     <orderEntry type="module" module-name="javascript-repeat" />
     <orderEntry type="module" module-name="french_fluency" />
     <orderEntry type="module" module-name="redux-next-example" />
+    <orderEntry type="module" module-name="doit-mvp" />
   </component>
 </module>

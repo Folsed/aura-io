@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/aura-io.iml" filepath="$PROJECT_DIR$/.idea/aura-io.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../doit-mvp/.idea/doit-mvp.iml" filepath="$PROJECT_DIR$/../doit-mvp/.idea/doit-mvp.iml" />
       <module fileurl="file://$PROJECT_DIR$/../french_fluency/.idea/french_fluency.iml" filepath="$PROJECT_DIR$/../french_fluency/.idea/french_fluency.iml" />
       <module fileurl="file://$PROJECT_DIR$/../javascript-repeat/.idea/javascript-repeat.iml" filepath="$PROJECT_DIR$/../javascript-repeat/.idea/javascript-repeat.iml" />
       <module fileurl="file://$PROJECT_DIR$/../redux-next-example/.idea/redux-next-example.iml" filepath="$PROJECT_DIR$/../redux-next-example/.idea/redux-next-example.iml" />
