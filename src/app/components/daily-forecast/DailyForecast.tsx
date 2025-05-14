@@ -46,14 +46,15 @@ const DailyForecast = () => {
                     </div>
                 ) : (
                     <div className='w-full'>
-                        <Carousel>
+                        <h2 className='flex items-center gap-2 font-medium'>Daily Forecast</h2>
+                        <Carousel className=''>
                             <CarouselContent>
                                 {todaysForecast?.map(
                                     (forecast: { dt_txt: string; main: { temp: number } }) => {
                                         return (
                                             <CarouselItem
                                                 key={forecast.dt_txt}
-                                                className='flex basis-[8.5rem] cursor-grab flex-col gap-4'
+                                                className='flex basis-1/4 sm:basis-1/5 cursor-grab flex-col gap-4 items-center'
                                             >
                                                 <p>{moment(forecast.dt_txt).format('HH:mm')}</p>
                                                 <p>

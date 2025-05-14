@@ -38,7 +38,6 @@ export default function Home() {
                     </div>
                     <div className='mt-4 flex gap-4'>
                         <WeatherHistoryChart />
-                        {/* <TopLargeSities /> */}
                     </div>
                 </div>
             </div>

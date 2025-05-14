@@ -14,7 +14,7 @@ const WindCompass = () => {
         <div className='dark:bg-dark-grey col-span-full flex h-[12rem] flex-col gap-3 rounded-lg border px-4 pt-6 pb-5 shadow-sm sm:col-span-2 md:col-span-1 xl:col-span-1 dark:shadow-none'>
             <h2 className='flex items-center gap-2 font-medium'> Wind</h2>
 
-            <div className='compass relative flex items-center justify-center'>
+            <div className='relative flex items-center justify-center'>
                 <div className='relative flex items-center justify-center'>
                     <Image src='/svgs/compass_body.svg' alt='compass' width={110} height={110} />
                     <Image
